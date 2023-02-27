@@ -1,23 +1,4 @@
 import Head from "next/head";
-import { Button, Card } from "ui";
-
-const CARD_CONTENT = [
-  {
-    title: "Caching Tasks",
-    href: "https://turbo.build/repo/docs/core-concepts/caching",
-    cta: "Read More",
-  },
-  {
-    title: "Running Tasks",
-    href: "https://turbo.build/repo/docs/core-concepts/monorepos/running-tasks",
-    cta: "Read More",
-  },
-  {
-    title: "Configuration Options",
-    href: "https://turbo.build/repo/docs/reference/configuration",
-    cta: "Read More",
-  },
-];
 
 export default function Home() {
   return (
@@ -27,21 +8,21 @@ export default function Home() {
       </Head>
 
       <main className="mx-auto w-auto px-4 pt-16 pb-8 sm:pt-24 lg:px-8">
-        <h1 className="mx-auto text-center text-6xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl xl:text-8xl">
-          Web
-          <span className="block bg-gradient-to-r from-brandred to-brandblue bg-clip-text text-transparent px-2">
-            Turborepo Example
-          </span>
-        </h1>
-        <div className="mx-auto mt-5 max-w-xl sm:flex sm:justify-center md:mt-8">
-          <Button />
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 place-content-evenly">
-          {CARD_CONTENT.map((card) => (
-            <Card key={card.title} {...card} />
-          ))}
-        </div>
+        <input
+          id="email-address"
+          name="email"
+          type="email"
+          autoComplete="email"
+          required
+          placeholder="Email"
+          className="min-w-0 flex-auto rounded-md border-0 px-3.5 py-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-green-600 sm:text-sm sm:leading-6"
+        />
+        <button
+          type="button"
+          className="disabled:opacity-60 border text-white font-bold tracking-wide sm:px-6 uppercase group inline-flex items-center justify-center rounded-md py-4 px-4 focus:outline-none focus-visible:outline-2 focus-visible:outline-offset-2 disabled:hover:bg-gray-800 hover:bg-green-500 focus:ring-green-500 bg-gray-900 focus:ring-2 border-transparent"
+        >
+          Submit
+        </button>
       </main>
     </div>
   );
